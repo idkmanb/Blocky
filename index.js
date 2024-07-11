@@ -19,7 +19,7 @@ console.log(firstName);
 (async () => {
   const browser = await puppeteer.launch({headless: false});
   const page = await browser.newPage();
-  await page.goto('https://robogifts.myshopify.com/collections/all', {waitUntil: 'networkidle2'});
+  await page.goto('https://feathergambles.myshopify.com/', {waitUntil: 'networkidle2'});
   await page.waitForSelector('.grid-view-item__link');
   const productCounts = await page.$$eval('.grid-view-item__link', divs => divs.length);
   await page.click(`.grid--view-items .grid__item:nth-of-type(${Math.floor(Math.random()*productCounts) + 1}`);
